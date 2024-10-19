@@ -1,10 +1,13 @@
-# shops/urls.py
 from django.urls import path
-from .views import register_shop, search_shops, register_shop_form, search_shops_form
+from api.views import register_shop, search_shops, register_shop_form, search_shops_form, delete_shop, view_all_shops
 
 urlpatterns = [
-    path('register/', register_shop_form, name='register_shop_form'),  # for rendering form
-    path('register/api/', register_shop, name='register_shop'),  # API for registration
-    path('search/', search_shops_form, name='search_shops_form'),  # for rendering form
-    path('search/api/', search_shops, name='search_shops'),  # API for search
+    path('register/', register_shop, name='register_shop'),
+    path('search/', search_shops, name='search_shops'),
+    path('shop/<int:shop_id>/delete/', delete_shop, name='delete_shop'),
+    path('shops/', view_all_shops, name='view_all_shops'),
+
+    
+    path('', register_shop_form, name='register_shop_form'),
+    path('search-form/', search_shops_form, name='search_shops_form'),
 ]

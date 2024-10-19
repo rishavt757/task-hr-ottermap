@@ -7,6 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Shops</title>
     <link rel="stylesheet" type="text/css" href="{% static 'shops/styles.css' %}">
+    <style>
+        .distance-results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #d4edda; /* Light green background */
+            border: 1px solid #c3e6cb; /* Green border */
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #c3e6cb;
+        }
+
+        th {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+
+        .register-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .register-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -20,6 +61,28 @@
             
             <button type="submit">Search</button>
         </form>
+
+        {% if distances %}
+            <div class="distance-results">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Shop Name</th>
+                            <th>Distance (km)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in distances %}
+                            <tr>
+                                <td>{{ item.shop.name }}</td>
+                                <td>{{ item.distance|floatformat:2 }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+        
         <a class="register-link" href="{% url 'register_shop_form' %}">Register a Shop</a>
     </div>
 </body>

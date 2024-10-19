@@ -1,20 +1,20 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #e0f7fa;
     margin: 0;
     padding: 20px;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #004d40;
 }
 
 form {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     margin: 0 auto;
 }
@@ -23,6 +23,7 @@ label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    color: #00695c;
 }
 
 input[type="text"],
@@ -32,50 +33,52 @@ input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #80cbc4;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 button {
-    background-color: #28a745;
+    background-color: #00796b;
     color: white;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #004d40;
 }
 
 .error {
-    color: red;
+    color: #d32f2f;
     margin-bottom: 15px;
 }
 
 input[type="submit"] {
-    background-color: #007bff;
+    background-color: #8e24aa;
     color: white;
     border: none;
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+    transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #6a1b9a;
 }
 
-
-.register-link, .search-link {
+.register-link,
+.search-link {
     display: inline-block; 
     margin-top: 15px;     
     padding: 10px 15px;   
-    background-color: #007bff;
+    background-color: #1976d2;
     color: white;         
     text-align: center;   
     border-radius: 5px;   
@@ -83,6 +86,49 @@ input[type="submit"]:hover {
     transition: background-color 0.3s;
 }
 
-.register-link:hover, .search-link:hover {
-    background-color: #0056b3;
+.register-link:hover,
+.search-link:hover {
+    background-color: #0d47a1;
 }
+
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #c3e6cb;
+    font-size: 14px;
+}
+
+.distance-results {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
