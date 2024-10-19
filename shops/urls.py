@@ -1,5 +1,5 @@
 from django.urls import path
-from api.views import register_shop, search_shops, register_shop_form, search_shops_form, delete_shop, view_all_shops
+from shops.views import register_shop, search_shops, register_shop_form, search_shops_form, delete_shop, view_all_shops
 
 urlpatterns = [
     path('register/', register_shop, name='register_shop'),
