@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Shops</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'shops/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search for Shops</h1>
+        <form action="{% url 'search_shops' %}" method="GET">
+            <label for="latitude">Latitude:</label>
+            <input type="number" id="latitude" name="latitude" placeholder="Enter your Latitude" step="any" required>
+            
+            <label for="longitude">Longitude:</label>
+            <input type="number" id="longitude" name="longitude" placeholder="Enter your Longitude" step="any" required>
+            
+            <button type="submit">Search</button>
+        </form>
+        <a class="register-link" href="{% url 'register_shop_form' %}">Register a Shop</a>
+    </div>
+</body>
+</html>
